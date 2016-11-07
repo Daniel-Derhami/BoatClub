@@ -26,7 +26,16 @@ import java.util.List;
      *
      * @param member
      */
-    public void addMember(List<Member> members ,  Member member) throws WorkShopException {}
+    public void addMember(List<Member> members ,  Member member) throws WorkShopException {
+        try {
+            members.add(member);
+            fileService.writeMembers(members);
+        } catch (WorkShopException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new WorkShopException(e);
+        }
+    }
 
     /**
      * get Compact List that contains name, member id and number of boats
