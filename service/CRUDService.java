@@ -165,7 +165,17 @@ import java.util.List;
      *
      * @param member
      */
-    public void updateMember(List<Member> members,Member member,List<Boat> boats) throws WorkShopException {}
+        public void updateMember(List<Member> members,Member member,List<Boat> boats) throws WorkShopException {
+        try {
+            Member beforeChange = searchMemberByMemberId(members,member.getMemberId());
+            deleteMember(members,beforeChange,boats);
+            addMember(members,member);
+        } catch (WorkShopException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new WorkShopException(e);
+        }
+    }
 
     /**
      * add a boat info file and update in memory
