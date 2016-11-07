@@ -230,6 +230,21 @@ import java.util.List;
      *
      * @param boat
      */
-    public void updateBoat(List<Member> members,List<Boat> boats,Boat boat,Member member) throws WorkShopException {}
+     public void updateBoat(List<Member> members,List<Boat> boats,Boat boat,Member member) throws WorkShopException {
+        try {
+            Member beforeMember = boat.getMember();
+            beforeMember.removeBoat(boat);
+            member.removeBoat(boat);
+            member.addBoat(boat);
+            boat.setMember(member);
+            fileService.writeBoats(boats);
+            fileService.writeMembers(members);
+            
+        } catch (WorkShopException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new WorkShopException(e);
+        }
+    }
 
 }
