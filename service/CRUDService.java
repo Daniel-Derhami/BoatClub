@@ -183,16 +183,48 @@ import java.util.List;
      * @param member
      * @param boat
      */
-    public void addBoat(List<Member> members,Member member, Boat boat,List<Boat> boats) throws WorkShopException {}
+        public void addBoat(List<Member> members,Member member, Boat boat,List<Boat> boats) throws WorkShopException {
+        try {
+            Member findMember = searchMemberByMemberId(members,member.getMemberId());
+            deleteMember(members,findMember,boats);
+            member.addBoat(boat);
+            addMember(members,member);
 
+            boat.setMember(member);
+            Iterator<Boat> boatIterator = member.getBoats();
+            while ( boatIterator.hasNext()) {
+                Boat b = boatIterator.next();
+                boats.add(b);
+            }
+            fileService.writeBoats(boats);
+        } catch (WorkShopException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new WorkShopException(e);
+        }
+    }
     /**
      * remove a boat from list by its id and save changes in both file and
      * memory
      *
      * @param boat
      */
-    public void deleteBoat(List<Member> members,List<Boat> boats,Boat boat) throws WorkShopException {}
+     public void deleteBoat(List<Member> members,List<Boat> boats,Boat boat) throws WorkShopException {
+        try {
+            boats.remove(boat);
+            fileService.writeBoats(boats);
 
+            Member findMember = searchMemberByMemberId(members,boat.getMember().getMemberId());
+            deleteMember(members,findMember,boats);
+            findMember.removeBoat(boat);
+            addMember(members,findMember);
+        } catch (WorkShopException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new WorkShopException(e);
+        }
+
+    }
     /**
      * update a boat info
      *
