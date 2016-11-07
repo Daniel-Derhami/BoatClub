@@ -50,7 +50,18 @@ import java.util.List;
      *
      * @return
      */
-    public List<String> getMembersVerboseList(List<Member> members) throws WorkShopException {}
+     public List<String> getMembersCompactList(List<Member> members) throws WorkShopException {
+        List<String> compactList = new ArrayList<String>();
+        try {
+            for (Member member : members) {
+                String compactInfo = "member name : " + member.getName() + ", member id: " + member.getMemberId() + ", number of boats: " + member.getBoatsSize();
+                compactList.add(compactInfo);
+            }
+        } catch (Exception e) {
+            throw new WorkShopException(e);
+        }
+        return compactList;
+    }
 
     /**
      * remove a member from list by its memberId and save changes in both file
