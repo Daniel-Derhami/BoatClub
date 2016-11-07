@@ -147,7 +147,18 @@ import java.util.List;
      * @param personalNumber
      * @return
      */
-    public Member searchMemberByPersonalNumber(List<Member> members,String personalNumber) throws WorkShopException {}
+    public Member searchMemberByPersonalNumber(List<Member> members,String personalNumber) throws WorkShopException {
+        try {
+            for (Member member : members) {
+                if (member.getPersonalNumber().equals(personalNumber)) {
+                    return member;
+                }
+            }
+        } catch (Exception e) {
+            throw new WorkShopException(e);
+        }
+        return null;
+    }
 
     /**
      * update a member info
