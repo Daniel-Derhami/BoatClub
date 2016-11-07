@@ -42,16 +42,7 @@ import java.util.List;
      *
      * @return
      */
-    public List<String> getMembersCompactList(List<Member> members) throws WorkShopException {}
-
-    /**
-     * get Verbose List that contains name, personal number, member id and boats
-     * with boat information
-     *
-     * @return
-     */
-     public List<String> getMembersCompactList(List<Member> members) throws WorkShopException {
-        List<String> compactList = new ArrayList<String>();
+    public List<String> getMembersCompactList(List<Member> members) throws WorkShopException { List<String> compactList = new ArrayList<String>();
         try {
             for (Member member : members) {
                 String compactInfo = "member name : " + member.getName() + ", member id: " + member.getMemberId() + ", number of boats: " + member.getBoatsSize();
@@ -61,6 +52,17 @@ import java.util.List;
             throw new WorkShopException(e);
         }
         return compactList;
+        
+    }
+
+    /**
+     * get Verbose List that contains name, personal number, member id and boats
+     * with boat information
+     *
+     * @return
+     */
+     public List<String> getMembersCompactList(List<Member> members) throws WorkShopException {
+       
     }
 
     /**
