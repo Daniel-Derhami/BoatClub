@@ -42,7 +42,8 @@ import java.util.List;
      *
      * @return
      */
-    public List<String> getMembersCompactList(List<Member> members) throws WorkShopException { List<String> compactList = new ArrayList<String>();
+    public List<String> getMembersCompactList(List<Member> members) throws WorkShopException { 
+        List<String> compactList = new ArrayList<String>();
         try {
             for (Member member : members) {
                 String compactInfo = "member name : " + member.getName() + ", member id: " + member.getMemberId() + ", number of boats: " + member.getBoatsSize();
@@ -61,8 +62,22 @@ import java.util.List;
      *
      * @return
      */
-     public List<String> getMembersCompactList(List<Member> members) throws WorkShopException {
-       
+    public List<String> getMembersVerboseList(List<Member> members) throws WorkShopException {
+        List<String> verboseList = new ArrayList<String>();
+        try {
+            for (Member member : members) {
+                String verboseInfo = "member name : " + member.getName() + ", personal number: " + member.getPersonalNumber() + ", member id: " + member.getMemberId() + ", boats info: \n";
+                Iterator<Boat> boatIterator = member.getBoats();
+                while ( boatIterator.hasNext()) {
+                    Boat boat = boatIterator.next();
+                    verboseInfo += "boat id: " + boat.getId() + ", boat size: " + boat.getSize() + ", boat type: " + boat.getType() + "\n";
+                }
+                verboseList.add(verboseInfo);
+            }
+        } catch (Exception e) {
+            throw new WorkShopException(e);
+        }
+        return verboseList;
     }
 
     /**
