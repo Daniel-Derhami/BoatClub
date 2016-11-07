@@ -109,7 +109,18 @@ import java.util.List;
      * @param memberId
      * @return
      */
-    public Member searchMemberByMemberId(List<Member> members,Long memberId) throws WorkShopException {}
+    public Member searchMemberByMemberId(List<Member> members,Long memberId) throws WorkShopException {
+        try {
+            for (Member member : members) {
+                if (member.getMemberId().equals(memberId)) {
+                    return member;
+                }
+            }
+        } catch (Exception e) {
+            throw new WorkShopException(e);
+        }
+        return null;
+    }
 
     /**
      * return a boat with input id
