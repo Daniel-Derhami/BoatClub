@@ -128,7 +128,18 @@ import java.util.List;
      * @param id
      * @return
      */
-    public Boat searchBoatById(List<Boat> boats,Long id) throws WorkShopException {}
+    public Boat searchBoatById(List<Boat> boats,Long id) throws WorkShopException {
+        try {
+            for (Boat boat : boats) {
+                if (boat.getId().equals(id)) {
+                    return boat;
+                }
+            }
+        } catch (Exception e) {
+            throw new WorkShopException(e);
+        }
+        return null;
+    }
 
     /**
      * return a member with input personalNumber
