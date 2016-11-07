@@ -86,7 +86,22 @@ import java.util.List;
      *
      * @param member
      */
-    public void deleteMember(List<Member> members,Member member,List<Boat> boats) throws WorkShopException {}
+        public void deleteMember(List<Member> members,Member member,List<Boat> boats) throws WorkShopException {
+        try {
+            members.remove(member);
+            Iterator<Boat> boatIterator = member.getBoats();
+            while ( boatIterator.hasNext()) {
+                Boat boat = boatIterator.next();
+                boats.remove(boat);
+            }
+            fileService.writeBoats(boats);
+            fileService.writeMembers(members);
+        } catch (WorkShopException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new WorkShopException(e);
+        }
+    }
 
     /**
      * return a member with input memerId
