@@ -12,7 +12,193 @@ public class MainForm extends javax.swing.JFrame {
     }
 
 
-    private void initComponents() {}
+    private void initComponents() {
+
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        memberNameLabel = new javax.swing.JLabel();
+        memberPersonalNumberLabel = new javax.swing.JLabel();
+        memberNameTextField = new javax.swing.JTextField();
+        memberPersonalNumberTextField = new javax.swing.JTextField();
+        addMemberButton = new javax.swing.JButton();
+        delimeterLabel1 = new java.awt.Label();
+        showMembersLabel = new java.awt.Label();
+        compactShowLastMembersButton = new javax.swing.JButton();
+        verboseShowLastMembersButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        infoTextArea = new javax.swing.JTextArea();
+        delimeterLabel2 = new java.awt.Label();
+        memberPersonalNumberDeleteTextField = new javax.swing.JTextField();
+        memberPersonalNumberDeleteLabel = new javax.swing.JLabel();
+        deleteMemberByPeronalNumberButton = new javax.swing.JButton();
+        memberIdDeleteLabel = new javax.swing.JLabel();
+        memberIdDeleteTextField = new javax.swing.JTextField();
+        deleteMemberByMemberIdButton = new javax.swing.JButton();
+        showMembersLabel1 = new java.awt.Label();
+        memberPersonalNumberShowTextField = new javax.swing.JTextField();
+        showMemberByPeronalNumberButton = new javax.swing.JButton();
+        delimeterLabel5 = new java.awt.Label();
+        memberPersonalNumberUpdateTextField = new javax.swing.JTextField();
+        memberPersonalNumberUpdateLabel = new javax.swing.JLabel();
+        updateMemberByPeronalNumberShowButton = new javax.swing.JButton();
+        memberNameUpdateLabel = new javax.swing.JLabel();
+        memberNameUpdateTextField = new javax.swing.JTextField();
+        memberPersonalNumberUpdateNewLabel = new javax.swing.JLabel();
+        memberPersonalNumberUpdateNewTextField = new javax.swing.JTextField();
+        updateMemberButton = new javax.swing.JButton();
+        cancelUpdateMemberButton = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        boatSizeTextField = new javax.swing.JTextField();
+        boatSizeLabel = new javax.swing.JLabel();
+        boatTypeLabel = new javax.swing.JLabel();
+        boatTypeComboBox = new javax.swing.JComboBox();
+        boatMemberPersonalNumberTextField = new javax.swing.JTextField();
+        boatMemberPersonalNumberLabel = new javax.swing.JLabel();
+        addBoatButton = new javax.swing.JButton();
+        delimeterLabel3 = new java.awt.Label();
+        boatIdDeleteLabel = new javax.swing.JLabel();
+        boatIdDeleteTextField = new javax.swing.JTextField();
+        deleteBoatByIdButton = new javax.swing.JButton();
+        delimeterLabel4 = new java.awt.Label();
+        boatIdUpdateLabel = new javax.swing.JLabel();
+        updateBoatShowButton = new javax.swing.JButton();
+        boatSizeUpdateLabel = new javax.swing.JLabel();
+        boatSizeUpdateTextField = new javax.swing.JTextField();
+        boatTypeUpdateLabel = new javax.swing.JLabel();
+        boatTypeUpdateComboBox = new javax.swing.JComboBox();
+        boatMemberPersonalNumberUpdateLabel = new javax.swing.JLabel();
+        updateBoatButton = new javax.swing.JButton();
+        boatMemberPersonalNumberUpdateTextField = new javax.swing.JTextField();
+        cancelUpdateBoatButton = new javax.swing.JButton();
+        boatIdUpdateTextField = new javax.swing.JTextField();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+
+        memberNameLabel.setText("Name: ");
+
+        memberPersonalNumberLabel.setText("Personal Number: ");
+
+        addMemberButton.setText("ADD MEMBER");
+
+        delimeterLabel1.setText("////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////");
+
+        showMembersLabel.setText("show specific Member's info(by personal number)");
+
+        compactShowLastMembersButton.setText("SHOW COMPACT");
+
+        verboseShowLastMembersButton.setText("SHOW VERBOSE");
+
+        infoTextArea.setColumns(20);
+        infoTextArea.setRows(5);
+        jScrollPane1.setViewportView(infoTextArea);
+
+        delimeterLabel2.setText("////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////");
+
+        memberPersonalNumberDeleteLabel.setText("Personal Number: ");
+
+        deleteMemberByPeronalNumberButton.setText("DELETE");
+        deleteMemberByPeronalNumberButton.setActionCommand("DELETE PERSONAL");
+
+        memberIdDeleteLabel.setText("member Id:");
+
+        deleteMemberByMemberIdButton.setText("DELETE");
+        deleteMemberByMemberIdButton.setActionCommand("DELETE ID");
+
+        showMembersLabel1.setText("show last updated Members");
+
+        showMemberByPeronalNumberButton.setText("SHOW MEMBER");
+
+        delimeterLabel5.setText("////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////");
+
+        memberPersonalNumberUpdateLabel.setText("Personal Number: ");
+
+        updateMemberByPeronalNumberShowButton.setText("SHOW");
+        updateMemberByPeronalNumberShowButton.setActionCommand("SHOW UPDATE MEMBER");
+
+        memberNameUpdateLabel.setText("Name: ");
+
+        memberPersonalNumberUpdateNewLabel.setText("New Personal Number: ");
+
+        updateMemberButton.setText("UPDATE");
+        updateMemberButton.setActionCommand("UPDATE MEMBER");
+
+        cancelUpdateMemberButton.setText("CANCEL");
+        cancelUpdateMemberButton.setActionCommand("CANCEL UPDATE MEMBER");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup();
+        jPanel1Layout.setVerticalGroup();
+
+        addMemberButton.addActionListener(frameActionListener);
+        showMembersLabel.getAccessibleContext().setAccessibleName("");
+        compactShowLastMembersButton.addActionListener(frameActionListener);
+        verboseShowLastMembersButton.addActionListener(frameActionListener);
+        deleteMemberByPeronalNumberButton.addActionListener(frameActionListener);
+        deleteMemberByMemberIdButton.addActionListener(frameActionListener);
+        showMemberByPeronalNumberButton.addActionListener(frameActionListener);
+        updateMemberByPeronalNumberShowButton.addActionListener(frameActionListener);
+        updateMemberButton.addActionListener(frameActionListener);
+        cancelUpdateMemberButton.addActionListener(frameActionListener);
+
+        jTabbedPane1.addTab("Members", jPanel1);
+
+        boatSizeLabel.setText("length: ");
+
+        boatTypeLabel.setText("type: ");
+
+        boatTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sailboat", "Motorsailer", "kayak_Canoe", "Other" }));
+
+        boatMemberPersonalNumberLabel.setText("member Personal Number: ");
+
+        addBoatButton.setText("ADD BOAT");
+
+        delimeterLabel3.setText("////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////");
+
+        boatIdDeleteLabel.setText("boat id: ");
+
+        deleteBoatByIdButton.setText("DELETE");
+        deleteBoatByIdButton.setActionCommand("DELETE BOAT");
+
+        delimeterLabel4.setText("////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////");
+
+        boatIdUpdateLabel.setText("boat id: ");
+
+        updateBoatShowButton.setText("SHOW");
+        updateBoatShowButton.setActionCommand("SHOW UPDATE BOAT");
+
+        boatSizeUpdateLabel.setText("length: ");
+
+        boatTypeUpdateLabel.setText("type: ");
+
+        boatTypeUpdateComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Sailboat", "Motorsailer", "kayak_Canoe", "Other" }));
+
+        boatMemberPersonalNumberUpdateLabel.setText("member Personal Number: ");
+
+        updateBoatButton.setText("UPDATE");
+        updateBoatButton.setActionCommand("UPDATE BOAT");
+
+        cancelUpdateBoatButton.setText("CANCEL");
+        cancelUpdateBoatButton.setActionCommand("CANCEL UPDATE BOAT");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup();
+        jPanel2Layout.setVerticalGroup();
+
+        addBoatButton.addActionListener(frameActionListener);
+        deleteBoatByIdButton.addActionListener(frameActionListener);
+        updateBoatShowButton.addActionListener(frameActionListener);
+        updateBoatButton.addActionListener(frameActionListener);
+        cancelUpdateBoatButton.addActionListener(frameActionListener);
+
+        jTabbedPane1.addTab("Boats", jPanel2);
+
+        getContentPane().add(jTabbedPane1, java.awt.BorderLayout.CENTER);
+
+        pack();
+    }
 
     
 
