@@ -29,18 +29,46 @@ public class FrameActionListener implements ActionListener {
     MainForm mainForm;
     CRUDService cruds = new CRUDService();
 
-    public FrameActionListener(MainForm mainForm) {}
+    public FrameActionListener(MainForm mainForm) {
+        this.mainForm = mainForm;
+        FileService fileService = new FileService();
+        try {
+            setMembers(fileService.readMembers());
+            setBoats(fileService.readBoats());
+        } catch (WorkShopException e) {
+            e.printStackTrace();
+        }
 
-    public  List<Member> getMembers() {}
+    }
 
-    public  void setMembers(List<Member> members) {}
+    public  List<Member> getMembers() {
+        return members;
+    }
 
-    public  List<Boat> getBoats() {}
+    public  void setMembers(List<Member> members) {
+        this.members = members;
+    }
 
-    public  void setBoats(List<Boat> boats) {}
+    public  List<Boat> getBoats() {
+        return boats;
+    }
+
+    public  void setBoats(List<Boat> boats) {
+        this.boats = boats;
+    }
 
     private  boolean isNumeric(String str)
-    {}
+    {
+        try
+        {
+            double d = Double.parseDouble(str);
+        }
+        catch(NumberFormatException nfe)
+        {
+            return false;
+        }
+        return true;
+    }
     @Override
     public void actionPerformed(ActionEvent e) {}
 
