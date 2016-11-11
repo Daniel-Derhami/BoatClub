@@ -21,4 +21,27 @@ import view.MainForm;
 import view.StartApp;
 import javax.swing.*;
 
-public class FrameActionListener implements ActionListener {}
+public class FrameActionListener implements ActionListener {
+
+    private  List<Member> members = new ArrayList<Member>();
+    private  List<Boat> boats = new ArrayList<Boat>();
+    
+    MainForm mainForm;
+    CRUDService cruds = new CRUDService();
+
+    public FrameActionListener(MainForm mainForm) {}
+
+    public  List<Member> getMembers() {}
+
+    public  void setMembers(List<Member> members) {}
+
+    public  List<Boat> getBoats() {}
+
+    public  void setBoats(List<Boat> boats) {}
+
+    private  boolean isNumeric(String str)
+    {}
+    @Override
+    public void actionPerformed(ActionEvent e) {}
+
+}
