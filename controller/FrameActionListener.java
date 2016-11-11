@@ -70,6 +70,28 @@ public class FrameActionListener implements ActionListener {
         return true;
     }
     @Override
-    public void actionPerformed(ActionEvent e) {}
+    public void actionPerformed(ActionEvent e) {
+        if (e.getActionCommand().equals("ADD MEMBER")) {} 
+        else if (e.getActionCommand().equals("SHOW MEMBER")) {} 
+        else if (e.getActionCommand().equals("SHOW COMPACT")) {} 
+        else if (e.getActionCommand().equals("SHOW VERBOSE")) {
+            try {} catch (WorkShopException ex) {} catch (Exception ex) {}
+        } else if (e.getActionCommand().equals("DELETE PERSONAL")) {} 
+        else if (e.getActionCommand().equals("DELETE ID")) {} 
+        else if (e.getActionCommand().equals("SHOW UPDATE MEMBER")) {
+            try {} catch (WorkShopException ex) {} catch (Exception ex) {}
+        } 
+        else if (e.getActionCommand().equals("CANCEL UPDATE MEMBER")) {} 
+        else if (e.getActionCommand().equals("UPDATE MEMBER")) {
+            try {} catch (WorkShopException ex) {} catch (Exception ex) {}
+        } else if (e.getActionCommand().equals("ADD BOAT")) {} 
+        else if (e.getActionCommand().equals("DELETE BOAT")) {
+            try {} catch (WorkShopException ex) {} catch (Exception ex) {}
+        } else if (e.getActionCommand().equals("SHOW UPDATE BOAT")) {
+            try {} catch (WorkShopException ex) {} catch (Exception ex) {}
+        } else if (e.getActionCommand().equals("CANCEL UPDATE BOAT")) {} 
+        else if (e.getActionCommand().equals("UPDATE BOAT")) {}
+
+    }
 
 }
